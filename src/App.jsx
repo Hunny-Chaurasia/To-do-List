@@ -11,14 +11,15 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const handleSubmit=(e)=>{
-    e.preventDefalut();
-    console.log('Submitted')
+    e.preventDefault(); 
+    if (!task) return;
+    // console.log('Submitted')
     const newTodo = {
       id: Date.now(),
       taskName: task,
       taskTime: dateTime,
     };
-  setTodos([...todos, newTodo]);
+    setTodos([...todos, newTodo]);
 
     setTask('');
     setDateTime('');
