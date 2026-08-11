@@ -34,6 +34,9 @@ function App() {
     setTask('');
     setDateTime('');
   };
+  const handleDelete = (idDelete) => {
+    setTodos(todos.filter((todo) => todo.id !== idDelete));
+  };
 
   return (
     <>
@@ -48,14 +51,15 @@ function App() {
             <input type="datetime" name="to-do-datetime" id="to-do-datetime" placeholder='to-do-datetime' value={dateTime}
               onChange={(e) => setDateTime(e.target.value)} />
             <br />
-            <input type="submit" value="Add" disabled={todos.length >= maxTasks}/>
+            <input type="submit" value="Add" disabled={todos.length >= maxTasks} />
           </form>
-          
+
         </div>
         <ul>
           {todos.map((todo) => (
             <li key={todo.id}>
-              <strong>{todo.taskName}</strong> - {todo.taskTime}
+              <strong>{todo.taskName}</strong> - {todo.taskTime}\
+              <button onClick={() => handleDelete(todo.id)}>Delete</button>
             </li>
           ))}
         </ul>
