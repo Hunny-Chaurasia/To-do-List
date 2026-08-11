@@ -40,10 +40,11 @@ function App() {
 
   return (
     <>
-      <section className=''>
-        <NavBar></ NavBar>
+    <NavBar></ NavBar>
+      <section className="flex-none bg-slate-900 text-white px-4 py-1.5 rounded-md border-2 border-fuchsia-400 shadow-[4px_2px_0px_0px_rgba(59,130,246,1)] w-fit ">
+        
         <h1 className='h-15'>My to-do List</h1>
-        <div className='bg-blue-500  h-12 '>
+        <div >
           <form onSubmit={handleSubmit}>
             <input type="text" name="to-do-input" id="do" placeholder="Enter Your Task" value={task}
               onChange={(e) => setTask(e.target.value)} />
