@@ -42,7 +42,7 @@ function App() {
     <>
       <section className=''>
         <NavBar></ NavBar>
-        <h1>My to-do List</h1>
+        <h1 className='h-15'>My to-do List</h1>
         <div className='bg-blue-500  h-12 '>
           <form onSubmit={handleSubmit}>
             <input type="text" name="to-do-input" id="do" placeholder="Enter Your Task" value={task}
