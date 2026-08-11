@@ -10,15 +10,14 @@ const maxTasks = 4;
 function App() {
   const [task, setTask] = useState('');
   const [dateTime, setDateTime] = useState('');
-
   const [todos, setTodos] = useState([]);
-  const [errorLimit, seterrorLimit] = useState(['']);
+  const [errorLimit, seterrorLimit] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (todos.length >= maxTasks) {
-      seterrorLimit("max limit reached bro..");
+      seterrorLimit("Max task limit reached");
       return;
     }
 
@@ -30,43 +29,81 @@ function App() {
       taskTime: dateTime,
     };
     setTodos([...todos, newTodo]);
-
+    seterrorLimit('');
     setTask('');
     setDateTime('');
   };
+
   const handleDelete = (idDelete) => {
     setTodos(todos.filter((todo) => todo.id !== idDelete));
+    if (todos.length - 1 < maxTasks) {
+      seterrorLimit('');
+    }
   };
 
   return (
-    <>
-    <NavBar></ NavBar>
-      <section className="flex-none bg-slate-900 text-white px-4 py-1.5 rounded-md border-2 border-fuchsia-400 shadow-[4px_2px_0px_0px_rgba(59,130,246,1)] w-fit ">
-        
-        <h1 className='h-15'>My to-do List</h1>
-        <div >
-          <form onSubmit={handleSubmit}>
-            <input type="text" name="to-do-input" id="do" placeholder="Enter Your Task" value={task}
-              onChange={(e) => setTask(e.target.value)} />
-            <br />
-            <input type="datetime" name="to-do-datetime" id="to-do-datetime" placeholder='to-do-datetime' value={dateTime}
-              onChange={(e) => setDateTime(e.target.value)} />
-            <br />
-            <input type="submit" value="Add" disabled={todos.length >= maxTasks} />
-          </form>
+    <div className="min-h-screen  p-0 m-0 bg-gradient-to-br from-slate-950 via-blue-950 to-pink-950 text-white flex flex-col items-center justify-center max-w-full">
+      <NavBar />
 
-        </div>
-        <ul>
+      <main className="w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(236,72,153,0.37)]">
+        <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400 text-center mb-6">
+          My To-Do List
+        </h1>
+
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <input
+            type="text"
+            placeholder="Enter Your Task"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-pink-400/50 backdrop-blur-sm transition-all"
+          />
+
+          <input
+            type="datetime-local"
+            value={dateTime}
+            onChange={(e) => setDateTime(e.target.value)}
+            className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 backdrop-blur-sm transition-all [color-scheme:dark]"
+          />
+
+          <button
+            type="submit"
+            disabled={todos.length >= maxTasks}
+            className="w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 font-semibold shadow-lg shadow-pink-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Add Task
+          </button>
+        </form>
+
+        {errorLimit && (
+          <p className="text-pink-400 text-xs text-center mt-3 font-medium">
+            {errorLimit}
+          </p>
+        )}
+
+        <ul className="mt-6 flex flex-col gap-3">
           {todos.map((todo) => (
-            <li key={todo.id}>
-              <strong>{todo.taskName}</strong> - {todo.taskTime}\
-              <button onClick={() => handleDelete(todo.id)}>Delete</button>
+            <li
+              key={todo.id}
+              className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all"
+            >
+              <div className="flex flex-col">
+                <span className="font-semibold text-slate-100">{todo.taskName}</span>
+                {todo.taskTime && (
+                  <span className="text-xs text-slate-300">{todo.taskTime}</span>
+                )}
+              </div>
+              <button
+                onClick={() => handleDelete(todo.id)}
+                className="px-3 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-300 border border-red-500/30 text-xs transition-all"
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
-      </section>
-
-    </>
+      </main>
+    </div>
   )
 }
 
