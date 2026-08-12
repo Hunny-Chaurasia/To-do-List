@@ -14,3 +14,8 @@ html, body, #root {
   font-style: normal;
   color:black;
 }
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5) brightness(0.5);
+  cursor: pointer;
+}

@@ -44,11 +44,11 @@ function App() {
   };
 
   return (
-    <div className=' min-h-screen t-0 p-0 m-0 bg-white '>
+    <div className=' min-h-screen t-0 p-0 m-0 z-0 bg-white '>
       <Bg/>
       <NavBar />
       <Bg/>
-       <div className="relative z-10 w-full max-w-md p-8 rounded-2xl bg-white  mx-auto mt-20">
+       <div className="relative z-0 w-full max-w-md p-8 rounded-2xl bg-white  mx-auto mt-20">
       <main className="black-ops-one-regular   w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.15)]">
         <h1 className="black-ops-one-regular  text-3xl font-extrabold text-black ">
           My To-Do List
@@ -61,15 +61,16 @@ function App() {
             placeholder="Enter Your Task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
-            className=" px-4 py-2.5 rounded-xl bg-white/10 border border-white/20   focus:outline-none focus:ring-2 focus:ring-gray-400/50 backdrop-blur-sm transition-all"
+            className=" px-4 py-2.5 rounded-xl bg-white/10 border border-black/60   focus:outline-none focus:ring-2 focus:ring-gray-400/50 backdrop-blur-sm transition-all placeholder:text-black/60 text-black/60"
           />
 
           <input
             type="datetime-local"
             required
             value={dateTime}
+            placeholder="dd-mm-yyyy hh:mm"
             onChange={(e) => setDateTime(e.target.value)}
-            className=" px-4 py-2.5 rounded-xl bg-gray-500 border border-white/20   focus:outline-none focus:ring-2 focus:ring-gray-400/50 backdrop-blur-sm transition-all text-black"
+            className=" px-4 py-2.5 rounded-xl bg-white/10 border border-black/60   focus:outline-none focus:ring-2 focus:ring-gray-400/50 backdrop-blur-sm transition-all  text-black/60"
           />
 
           <button
