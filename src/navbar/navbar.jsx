@@ -10,8 +10,8 @@ function NavBar() {
 
             
             <div>
-                <button className="bg-slate-900/80 black-ops-one-regular text-blue-300 font-semibold px-5 py-1.5 rounded-xl border-2 border-pink-500 shadow-[3px_3px_0px_0px_rgba(59,130,246,1)] hover:shadow-[1px_1px_0px_0px_rgba(59,130,246,1)] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer black-ops-one-regular">
-                    dark
+                <button className="black-ops-one-regular px-5 py-1.5 ">
+                    <i class="fa-solid fa-sun"></i>
                 </button>
             </div>
         </div>

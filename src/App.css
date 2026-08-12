@@ -19,3 +19,12 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   filter: invert(0.5) brightness(0.5);
   cursor: pointer;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
