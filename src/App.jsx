@@ -44,13 +44,13 @@ function App() {
   };
 
   return (
-    <div className='-z-110 min-h-screen t-0 p-0 m-0 '>
+    <div className=' min-h-screen t-0 p-0 m-0 bg-white '>
       <Bg/>
       <NavBar />
       <Bg/>
-      <div className="flex flex-col items-center justify-center max-w-full z-10">
-      <main className="black-ops-one-regular w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(236,72,153,0.37)]">
-        <h1 className="black-ops-one-regular text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-rb from-blue-400 to-pink-400 text-center mb-6">
+       <div className="relative z-10 w-full max-w-md p-8 rounded-2xl bg-white  mx-auto mt-20">
+      <main className="black-ops-one-regular   w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.15)]">
+        <h1 className="black-ops-one-regular  text-3xl font-extrabold text-black ">
           My To-Do List
         </h1>
 
@@ -61,7 +61,7 @@ function App() {
             placeholder="Enter Your Task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-pink-400/50 backdrop-blur-sm transition-all"
+            className=" px-4 py-2.5 rounded-xl bg-white/10 border border-white/20   focus:outline-none focus:ring-2 focus:ring-gray-400/50 backdrop-blur-sm transition-all"
           />
 
           <input
@@ -69,13 +69,13 @@ function App() {
             required
             value={dateTime}
             onChange={(e) => setDateTime(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 backdrop-blur-sm transition-all [color-scheme:dark]"
+            className=" px-4 py-2.5 rounded-xl bg-gray-500 border border-white/20   focus:outline-none focus:ring-2 focus:ring-gray-400/50 backdrop-blur-sm transition-all text-black"
           />
 
           <button
             type="submit"
             disabled={todos.length >= maxTasks}
-            className="w-full py-2.5 rounded-xl bg-gradient-to-rb from-blue-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 font-semibold shadow-lg shadow-pink-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-fit px-4 py-2.5 rounded-xl bg-gray-500/20 hover:bg-gray-500/40  border-gray-500/30 text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed mx-auto "
           >
             Add Task
           </button>
@@ -90,9 +90,9 @@ function App() {
               className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all"
             >
               <div className="flex flex-col">
-                <span className="font-semibold text-slate-100">{todo.taskName}</span>
+                <span className="font-semibold  ">{todo.taskName}</span>
                 {todo.taskTime && (
-                  <span className="text-xs text-slate-300">{todo.taskTime}</span>
+                  <span className="text-xs">{todo.taskTime}</span>
                 )}
               </div>
               <button
@@ -105,7 +105,7 @@ function App() {
           ))}
         </ul>
       </main>
-    </div>
+      </div>
     </div>
   )
 }
