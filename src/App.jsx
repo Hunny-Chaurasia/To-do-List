@@ -4,7 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import NavBar from './navbar/navbar.jsx'
-// import Bg from './backgrund/bg.jsx'
+import Bg from './backgrund/bg.jsx'
 
 
 const maxTasks = 4;
@@ -44,10 +44,11 @@ function App() {
   };
 
   return (
-    <div className='black-ops-one-regular min-h-screen t-0 p-0 m-0 bg-gradient-to-br from-slate-950 via-blue-950 to-pink-950 text-white flex flex-col items-center gap-20'>
-      {/* <Bg/> */}
+    <div className='-z-110 min-h-screen t-0 p-0 m-0 '>
+      <Bg/>
       <NavBar />
-      <div className="flex flex-col items-center justify-center max-w-full">
+      <Bg/>
+      <div className="flex flex-col items-center justify-center max-w-full z-10">
       <main className="black-ops-one-regular w-full max-w-md p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_0_rgba(236,72,153,0.37)]">
         <h1 className="black-ops-one-regular text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-rb from-blue-400 to-pink-400 text-center mb-6">
           My To-Do List

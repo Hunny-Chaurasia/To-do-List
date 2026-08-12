@@ -1,6 +1,6 @@
 function NavBar() {
     return (
-        <div className="flex my-1 top-0 mx-auto justify-between items-center  backdrop-blur-md px-2 py-3 shadow-[0_8_32px_0_rgba(236,72,153,0.25)] w-full pt-0">
+        <div className=" flex my-1 top-0 mx-auto justify-between items-center  backdrop-blur-md px-2 py-3 shadow-[0_8_32px_0_rgba(236,72,153,0.25)] w-full pt-0">
 
             <div>
                 <h1 className=" black-ops-one-regular text-2xl font-extrabold bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
