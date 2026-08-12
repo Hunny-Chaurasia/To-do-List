@@ -76,9 +76,7 @@ function App() {
           <button
             type="submit"
             disabled={todos.length >= maxTasks}
-            className="w-fit px-4 py-2.5 rounded-xl bg-gray-500/20 hover:bg-gray-500/40  border-gray-500/30 text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed mx-auto "
-          >
-            Add Task
+            className="w-fit px-4 py-2.5 rounded-xl bg-gray-500/20 hover:bg-gray-500/40  border-gray-500/30 text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed mx-auto ">Add Task
           </button>
         </form>
 
@@ -98,9 +96,7 @@ function App() {
               </div>
               <button
                 onClick={() => handleDelete(todo.id)}
-                className="px-3 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-300 border border-red-500/30 text-xs transition-all"
-              >
-                Delete
+                className="px-3 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/40 text-red-300 border border-red-500/30 text-xs transition-all">Delete
               </button>
             </li>
           ))}
